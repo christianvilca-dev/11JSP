@@ -40,5 +40,21 @@
         
         <!-- @include paginas web staticas (html puro)-->
         <%@include file="WEB-INF/partials-static/footer.html" %> 
+        
+        <p>
+        <%
+            // Codigo snippet Java se usa ";"
+            int a=5, b=4, c;
+            c=a+b;
+            out.print("el resultado es: " + c);
+        %>
+        </p>
+        
+        <div>
+        <%= 
+            // Expresion Java para mostrar variable
+            c
+        %>
+        </div>
     </body>
 </html>
