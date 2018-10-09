@@ -13,9 +13,32 @@
     <head>
         <meta charset="UTF-8">
         <title>JSP Page</title>
+        <style>
+            nav {
+                background-color: #333; 
+            }
+            nav ul li {
+                display: inline-block;
+            }
+            nav ul li a {
+                color: #eee;
+                text-decoration: none;
+            }
+            .seleccionado{
+                color: #000;
+                background-color: white;
+            }
+        </style>
     </head>
     <body>
+        <!-- jsp:include paginas web dinamicas (JSP) y que permite enviar parametros -->
+        <jsp:include page="WEB-INF/partials-dinamic/menu-navegacion.jsp"> 
+            <jsp:param name="pagina" value="inicio"></jsp:param>
+        </jsp:include>
+        
         <h1>Hello World!</h1>
-        <%@include file="WEB-INF/partials-static/footer.html" %>
+        
+        <!-- @include paginas web staticas (html puro)-->
+        <%@include file="WEB-INF/partials-static/footer.html" %> 
     </body>
 </html>
