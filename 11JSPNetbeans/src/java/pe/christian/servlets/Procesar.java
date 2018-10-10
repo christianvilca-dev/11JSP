@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import pe.christian.utilidades.Utilidades;
 
 /**
  *
@@ -48,15 +49,17 @@ public class Procesar extends HttpServlet {
         
         // Se enviará el atributo
         request.setAttribute("respuesta", c); // tambien se puede enviar un lista o cualquier objeto
+        
+        Utilidades.irAPagina(request, response, getServletContext(), "/respuestasumar.jsp");
         // Especificamos a que JSP enviamos el atributo
         // Obtenemos un despachador(objeto que se encarga de buscar el JSP al cual se le da la direccion)
         // el cual se obtiene desde el contexto de los servlets y de ese contexto se obtiene un despachador
         // a ese despachador se envia la URL a la que se envia las respuestas que se envia en los atributos 
-        RequestDispatcher despachador = getServletContext().getRequestDispatcher("/respuestasumar.jsp");
+//        RequestDispatcher despachador = getServletContext().getRequestDispatcher("/respuestasumar.jsp");
         // Se envia todo el objeto respuesta y el request a esa pagina JSP
         // Es necesario enviar los objetos de request y reponse para conocer 
         // cada uno de los clientes que le esta haciendo la solicutud y la respuesta
-        despachador.forward(request, response); 
+//        despachador.forward(request, response); 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
