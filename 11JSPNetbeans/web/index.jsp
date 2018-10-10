@@ -39,7 +39,7 @@
         <h1>Hello World!</h1>
         
         <!-- @include paginas web staticas (html puro)-->
-        <%@include file="WEB-INF/partials-static/footer.html" %> 
+        <%@include file="WEB-INF/partials-static/footer.jsp" %> 
         
         <p>
         <%
